@@ -1,7 +1,6 @@
 package com.nopcommerce.pages;
 
 import com.nopcommerce.utility.Utility;
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 
 public class QuantityPage extends Utility {
@@ -35,8 +34,8 @@ public class QuantityPage extends Utility {
     public void clickoncheckout(){
         clickOnElement(checkout);
     }
-    public String verifyShoppingcartMess(){
-        return getTextFromElement(verifyshoppingcart);
+    public void verifyShoppingcartMess(){
+        getTextFromElement(verifyshoppingcart);
     }
     public void setCheckoutasguest(){
         clickOnElement(checkoutasguest);

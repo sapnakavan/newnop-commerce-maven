@@ -8,13 +8,19 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 public class ComputerTest extends TestBase {
-    ComputerPage computerPage = new ComputerPage();
-    QuantityPage quantityPage = new QuantityPage();
-    ElectronicsPage electronicsPage = new ElectronicsPage();
-    AddressPage addressPage = new AddressPage();
-    PaymentPage paymentPage = new PaymentPage();
-
-
+    ComputerPage computerPage;
+    QuantityPage quantityPage;
+    ElectronicsPage electronicsPage ;
+    AddressPage addressPage ;
+    PaymentPage paymentPage ;
+@BeforeMethod(alwaysRun = true)
+    public void inIt() {
+    computerPage = new ComputerPage();
+    quantityPage = new QuantityPage();
+    electronicsPage = new ElectronicsPage();
+    addressPage = new AddressPage();
+    paymentPage = new PaymentPage();
+}
     @Test
     public void Testname(){
         computerPage.clickoncomputer();
@@ -22,7 +28,7 @@ public class ComputerTest extends TestBase {
         computerPage.selectztoa();
         computerPage.verifyztoa();
     }
-    @Test
+    @Test(groups = {"sanity"})
     public void  verifyProductAddedToShoppingCartSuccessFully() throws InterruptedException {
         computerPage.clickoncomputer();
         computerPage.clickondesktop();

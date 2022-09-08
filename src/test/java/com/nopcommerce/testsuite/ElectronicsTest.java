@@ -1,64 +1,70 @@
 package com.nopcommerce.testsuite;
 
-import com.nopcommerce.pages.AddressPage;
-import com.nopcommerce.pages.ElectronicsPage;
-import com.nopcommerce.pages.PaymentPage;
-import com.nopcommerce.pages.QuantityPage;
+import com.nopcommerce.pages.*;
 import com.nopcommerce.testbase.TestBase;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ElectronicsTest extends TestBase {
-    ElectronicsPage electronics = new ElectronicsPage();
-    AddressPage addressPage = new AddressPage();
-    QuantityPage quantityPage = new QuantityPage();
-    PaymentPage paymentPage = new PaymentPage();
+    QuantityPage quantityPage;
+    ElectronicsPage electronicsPage ;
+    AddressPage addressPage ;
+    PaymentPage paymentPage ;
+
+    @BeforeMethod(alwaysRun = true)
+    public void inIt() {
+        quantityPage = new QuantityPage();
+        electronicsPage = new ElectronicsPage();
+        addressPage = new AddressPage();
+        paymentPage = new PaymentPage();
+    }
     @Test
     public void testverified(){
-        electronics.mousehoveronelectronictab();
-        electronics.mousehoveroncellphoneandclick();
-        electronics.verifycellphonetext();
+        electronicsPage.mousehoveronelectronictab();
+        electronicsPage.mousehoveroncellphoneandclick();
+        electronicsPage.verifycellphonetext();
     }
     @Test
     public void verifyThatTheProductAddedSuccessfullyAndPlaceOrderSuccessfully() throws InterruptedException {
         this.testverified();
-        electronics.clickonlisttab();
-        electronics.clickonproduct();
-        electronics.verifynokialumia();
-        electronics.verifypricenokia();
+        electronicsPage.clickonlisttab();
+        electronicsPage.clickonproduct();
+        electronicsPage.verifynokialumia();
+        electronicsPage.verifypricenokia();
         quantityPage.setChangequa();
         quantityPage.setAddtocart();
-        electronics.verifymess();
-        electronics.clickonclosebutton();
-        electronics.mousehoveronshopingcartandgotocart();
+        electronicsPage.verifymess();
+        electronicsPage.clickonclosebutton();
+        electronicsPage.mousehoveronshopingcartandgotocart();
         quantityPage.verifyShoppingcartMess();
-        electronics.verifyTotalofProduct();
+        electronicsPage.verifyTotalofProduct();
         quantityPage.clickonterms();
         quantityPage.clickoncheckout();
-        electronics.verifywelcomesignin();
-        electronics.clickonregistertab();
-        electronics.verifyregistertab();
-        electronics.fillmandatoryfields();
-        electronics.clickonregisterbutton();
-        electronics.verifyregistermess();
-        electronics.clickoncontinue();
+        electronicsPage.verifywelcomesignin();
+        electronicsPage.clickonregistertab();
+        electronicsPage.verifyregistertab();
+        electronicsPage.fillmandatoryfields();
+        electronicsPage.clickonregisterbutton();
+        electronicsPage.verifyregistermess();
+        electronicsPage.clickoncontinue();
         quantityPage.verifyShoppingcartMess();
         quantityPage.clickonterms();
         quantityPage.clickoncheckout();
         addressPage.mandatoryfield();
-        electronics.clickon2nddaydelivery();
-        electronics.clickoncontinue1();
-        electronics.setRadiobuttoncreditcard();
+        electronicsPage.clickon2nddaydelivery();
+        electronicsPage.clickoncontinue1();
+        electronicsPage.setRadiobuttoncreditcard();
        paymentPage.enterpaymentdetails();
        paymentPage.paymentmethod();
-       electronics.clickoncheckoutcontinue();
+       electronicsPage.clickoncheckoutcontinue();
        paymentPage.verifyElectrocontinue();
-       electronics.verifymethodshipping();
-       electronics.verifytotalfinal();
-       quantityPage.clickconfirm1();
-       electronics.verifythankyou();
-       electronics.verifyordremessage();
-       electronics.clickonfinalcontinue();
-       electronics.verifywelcometostore();
-       electronics.logout();
+       electronicsPage.verifymethodshipping();
+       electronicsPage.verifytotalfinal();
+       electronicsPage.clickonconfirm();
+       electronicsPage.verifythankyou();
+       electronicsPage.verifyordremessage();
+       electronicsPage.clickonfinalcontinue();
+       electronicsPage.verifywelcometostore();
+       electronicsPage.logout();
     }
 }

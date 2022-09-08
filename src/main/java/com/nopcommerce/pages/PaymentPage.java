@@ -9,7 +9,7 @@ public class PaymentPage extends Utility {
     By expirymonth = By.xpath("//select[@id='ExpireMonth']");
     By expiredyear = By.xpath("//select[@id='ExpireYear']");
     By cardcode = By.xpath("//input[@id='CardCode']");
-    By verifypaymentmethod = By.xpath("//div[@class='payment-method-info']/ul");
+    By verifypaymentmethod = By.xpath("//div[@class='payment-method-info']/ul[1]");
     By continue4 = By.xpath("//body/div[6]/div[3]/div[1]/div[1]/div[1]/div[2]/ol[1]/li[5]/div[2]/div[1]/button[1]");
 
     By electrocontinue = By.xpath("//span[contains(text(),'Credit Card')]");
