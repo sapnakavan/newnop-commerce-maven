@@ -7,6 +7,8 @@
     <test name="Demo Test">
         <classes>
             <class name="com.nopcommerce.testsuite.ComputerTest"></class>
+            <class name="com.nopcommerce.testsuite.TopMenuTest"></class>
+            <class name="com.nopcommerce.testsuite.ElectronicsTest"></class>
         </classes>
     </test>
 </suite>

@@ -1,7 +1,10 @@
 package com.nopcommerce.testsuite;
 
+import com.nopcommerce.customlisteners.CustomListeners;
 import com.nopcommerce.pages.*;
 import com.nopcommerce.testbase.TestBase;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 public class ComputerTest extends TestBase {
@@ -19,7 +22,7 @@ public class ComputerTest extends TestBase {
         computerPage.selectztoa();
         computerPage.verifyztoa();
     }
-    @Test(groups = {"smoke","sanity","regression"})
+    @Test
     public void  verifyProductAddedToShoppingCartSuccessFully() throws InterruptedException {
         computerPage.clickoncomputer();
         computerPage.clickondesktop();

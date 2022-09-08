@@ -6,7 +6,7 @@
             <include name="smoke"></include>
         </run>
     </groups>
-    <test name="sanity suite Test">
+    <test name="nop commerce suite Test">
         <classes>
             <class name="com.nopcommerce.testsuite.ElectronicsTest"></class>
             <class name="com.nopcommerce.testsuite.ComputerTest"></class>

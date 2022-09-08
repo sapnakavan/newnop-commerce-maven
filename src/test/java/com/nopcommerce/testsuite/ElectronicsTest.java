@@ -12,13 +12,13 @@ public class ElectronicsTest extends TestBase {
     AddressPage addressPage = new AddressPage();
     QuantityPage quantityPage = new QuantityPage();
     PaymentPage paymentPage = new PaymentPage();
-    @Test(groups = "regression")
+    @Test
     public void testverified(){
         electronics.mousehoveronelectronictab();
         electronics.mousehoveroncellphoneandclick();
         electronics.verifycellphonetext();
     }
-    @Test(groups = {"sanity","regression"})
+    @Test
     public void verifyThatTheProductAddedSuccessfullyAndPlaceOrderSuccessfully() throws InterruptedException {
         this.testverified();
         electronics.clickonlisttab();
@@ -51,9 +51,9 @@ public class ElectronicsTest extends TestBase {
        paymentPage.enterpaymentdetails();
        paymentPage.paymentmethod();
        electronics.clickoncheckoutcontinue();
-      // paymentPage.verifyElectrocontinue();
-       //electronics.verifymethodshipping();
-       //electronics.verifytotalfinal();
+       paymentPage.verifyElectrocontinue();
+       electronics.verifymethodshipping();
+       electronics.verifytotalfinal();
        quantityPage.clickconfirm1();
        electronics.verifythankyou();
        electronics.verifyordremessage();
